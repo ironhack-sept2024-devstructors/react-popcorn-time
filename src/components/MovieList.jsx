@@ -3,7 +3,7 @@ import MovieSummary from "./MovieSummary";
 function MovieList(props){
 
     return (
-        <section className="MovieList">
+        <section className="MovieList card-list">
 
             {props.moviesToDisplay.map((movieObj) => {                                
                 return (

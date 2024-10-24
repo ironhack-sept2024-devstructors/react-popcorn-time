@@ -6,7 +6,8 @@
 .Header nav {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid #fff;
 }
 
 .Header nav a {
@@ -16,7 +17,7 @@
 }
 
 .Header nav a.active {
-    color: orange;
+    color: #f5c518;
 }
 
 .Header nav a:last-child {

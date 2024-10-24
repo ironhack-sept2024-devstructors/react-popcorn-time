@@ -19,7 +19,7 @@ function MovieDetails(props){
             <p>Rating: {movie.rating}</p>
 
             <p>
-                <Link to="/">Back</Link>
+                <Link to="/" className="btn btn-primary">Back</Link>
             </p>
 
         </div>

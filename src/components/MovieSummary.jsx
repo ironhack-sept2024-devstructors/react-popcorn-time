@@ -7,8 +7,8 @@ function MovieSummary (props){
             <p>Year: {props.movieDetails.year}</p>
 
             <p>
-                <button onClick={() => {props.callbackToDelete(props.movieDetails.id)}}>Delete this movie</button>
-                <Link to={`/movies/${props.movieDetails.id}`}>More Details</Link>
+                <button onClick={() => {props.callbackToDelete(props.movieDetails.id)}}>Delete</button>
+                <Link className="btn btn-primary" to={`/movies/${props.movieDetails.id}`}>More Details</Link>
             </p>
         </div>
     );
