@@ -28,7 +28,7 @@ function MovieList(){
 
             {moviesToDisplay.map((movieObj) => {                                
                 return (
-                    <Movie movieDetails={movieObj} callbackToDelete={deleteMovie} />
+                    <Movie key={movieObj.id} movieDetails={movieObj} callbackToDelete={deleteMovie} />
                 )
             })}
             
