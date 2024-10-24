@@ -1,4 +1,4 @@
-import Movie from "./Movie";
+import MovieSummary from "./MovieSummary";
 
 function MovieList(props){
 
@@ -7,7 +7,7 @@ function MovieList(props){
 
             {props.moviesToDisplay.map((movieObj) => {                                
                 return (
-                    <Movie key={movieObj.id} movieDetails={movieObj} callbackToDelete={props.callbackToDelete} />
+                    <MovieSummary key={movieObj.id} movieDetails={movieObj} callbackToDelete={props.callbackToDelete} />
                 )
             })}
             
