@@ -20,7 +20,7 @@ function App() {
   const [imgURL, setImgURL] = useState("");
 
   const deleteMovie = (movieId) => {
-    const newArray = moviesToDisplay.filter(movieObj => {
+    const newArray = moviesToDisplay.filter(movieObj => {      
       return movieObj.id !== movieId;
     });
     setMoviesToDisplay(newArray);
@@ -29,8 +29,14 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
+    // find out id for the movie that we want to add
+    const movieIds = moviesToDisplay.map(movieObj => movieObj.id);
+    const maxId = Math.max(...movieIds);
+    const nextId = maxId + 1;
+    
     // prepare obj with the details about the new movie
     const newMovie = {
+      id: nextId,
       title: title,
       year: year,
       rating: rating,
