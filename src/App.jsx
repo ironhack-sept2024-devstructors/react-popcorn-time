@@ -13,6 +13,8 @@ import movies from "./data/movies.json";
 function App() {
 
   const [moviesToDisplay, setMoviesToDisplay] = useState(movies);
+  
+  const [title, setTitle] = useState("");
 
   const deleteMovie = (movieId) => {
     const newArray = moviesToDisplay.filter(movieObj => {
@@ -21,11 +23,49 @@ function App() {
     setMoviesToDisplay(newArray);
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // prepare obj with the details about the new movie
+    const newMovie = {
+      title: title
+    }
+
+    // prepare the new array of movies
+    const newArray = [newMovie, ...moviesToDisplay];
+
+    // update state
+    setMoviesToDisplay(newArray);
+
+    // clear form
+    setTitle("");
+
+  }
 
   return (
     <>
 
       <Header numberOfMovies={moviesToDisplay.length} />
+
+      <section className="box">
+        <h2>Create your own movie</h2>
+
+        <form onSubmit={handleSubmit}>
+
+          <label>Title:
+            <input 
+              type="text" 
+              name="title" 
+              placeholder="The Godfather" 
+              value={title} 
+              onChange={(e) => { setTitle(e.target.value) }}
+            />
+          </label>
+
+          <button>Create</button>
+        </form>
+
+      </section>
 
       <Routes>
         <Route path="/" element={<MovieList moviesToDisplay={moviesToDisplay} callbackToDelete={deleteMovie} />} />

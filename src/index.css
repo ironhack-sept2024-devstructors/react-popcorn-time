@@ -36,6 +36,11 @@ h2 {
   font-size: 1.4em;
 }
 
+input {
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
 button, .btn {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -60,6 +65,12 @@ button:focus-visible {
 }
 .btn-primary:hover {
   color: #1a1a1a;
+}
+
+.box {
+  outline: 1px solid #fff;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 .card-list {
